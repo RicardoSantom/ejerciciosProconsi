@@ -41,9 +41,12 @@
 <a href="{{ route('mostrarTexto') }}" class="btn btn-primary">Ver texto.blade.php</a>
 <p>Ejercicios con fechas</p>
 <a href="{{ route('fechas') }}" class="btn btn-primary">Ver fechas.blade.php</a>
+<p>Ejercicios con clases</p>
+<a href="{{ route('formularioClases') }}" class="btn btn-primary">Ir al formulario</a>
+<p>Ejercicios de generación aleatoria</p>
+<a href="{{ route('generacionAleatoria') }}" class="btn btn-primary">Generación Aleatoria</a>
 <!-- Agregar enlaces a los archivos JS de Bootstrap -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CadenasController;
 use App\Http\Controllers\FechasController;
+use App\Http\Controllers\ItemController;
+use App\Http\Controllers\GeneracionAleatoriaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,7 +18,7 @@ use App\Http\Controllers\FechasController;
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('index');
 
 // Ruta para mostrar la vista "texto.blade.php" con el texto original
 Route::get('/mostrar-texto', [CadenasController::class, 'mostrarTexto'])->name('mostrarTexto');
@@ -44,3 +46,18 @@ Route::get('/fechas', [FechasController::class, 'fechas'])->name('fechas');
 
 // Ruta para procesar el formulario y ejecutar la acción según el botón presionado
 Route::post('/fechas', [FechasController::class, 'procesarFormulario'])->name('fechas.procesar');
+
+// Rutas para itemSeparator
+// Ruta para mostrar el formulario de creación de instancia
+Route::get('/main', [ItemController::class, 'mostrarVista'])->name('formularioClases');
+
+// Ruta para procesar el formulario y crear la instancia de ItemSeparator
+Route::post('/instanciarItem', [ItemController::class, 'instanciarItem'])->name('instanciarItem');
+
+// Ruta para mostrar la vista de generación aleatoria
+Route::get('/aleatoria/generacionAleatoria', [GeneracionAleatoriaController::class, 'mostrarVista'])
+    ->name('generacionAleatoria');
+
+// Ruta para procesar el formulario y generar las formas aleatorias
+Route::post('/aleatoria/generarFormas', [GeneracionAleatoriaController::class, 'generarFormas'])
+    ->name('generarFormas');
